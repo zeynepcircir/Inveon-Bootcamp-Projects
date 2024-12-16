@@ -1,0 +1,19 @@
+﻿@model LibraryManagement.Core.DTOs.BookDetailsDTO
+
+<div class="card">
+    <div class="card-header">
+        <h3>@Model.Title</h3>
+    </div>
+    <div class="card-body">
+        <p><strong>Author:</strong> @Model.Author</p>
+        <p><strong>Publication Year:</strong> @Model.PublicationYear</p>
+        <p><strong>ISBN:</strong> @Model.ISBN</p>
+        <p><strong>Genre:</strong> @Model.Genre</p>
+        <p><strong>Publisher:</strong> @Model.Publisher</p>
+        <p><strong>Page Count:</strong> @Model.PageCount</p>
+        <p><strong>Language:</strong> @Model.Language</p>
+        <p><strong>Summary:</strong> <span class="text-muted">@Model.Summary</span></p>
+        <p><strong>Available Copies:</strong> @Model.AvailableCopies</p>
+    </div>
+</div>
+<a class="btn btn-primary" href="@Url.Action("Index", "Book")">Back to List</a>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<LibraryManagement.Core.DTOs.BookListDTO>
+
+<h2>Book List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Available Copies</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.PublicationYear</td>
+                <td>@book.ISBN</td>
+                <td>
+                    <!-- Detay sayfasına yönlendiren link -->
+                    <a class="btn btn-primary" href="@Url.Action("Details", "Book", new { id = book.Id })">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -7,7 +7,7 @@ namespace LibraryManagement.API.Controllers
 {
     public class BooksController : CustomBaseController
     {
-         private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
         private readonly IBookService _service;
 
         public BooksController(IMapper mapper, IBookService productService)
