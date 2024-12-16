@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Core.DTOs
 {
-    public class BookListDTO : BaseDto
+    public class BookListDTO : BaseDTO
     {
         public string Title { get; set; }
         public string Author { get; set; }

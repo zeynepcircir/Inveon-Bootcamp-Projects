@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.Core.DTOs
 {
-    public abstract class BaseDto
+    public abstract class BaseDTO
     {
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }

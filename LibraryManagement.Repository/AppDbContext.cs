@@ -1,4 +1,6 @@
 ﻿using LibraryManagement.Core.Models;
+using LibraryManagement.Repository.Configurations;
+using LibraryManagement.Repository.Seeds;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,14 @@ namespace LibraryManagement.Repository
         }
 
         public DbSet<Book> Books { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new BookConfiguration());
+            modelBuilder.ApplyConfiguration(new BookSeed());
+
+            base.OnModelCreating(modelBuilder);
+        }
 
         public override int SaveChanges()
         {

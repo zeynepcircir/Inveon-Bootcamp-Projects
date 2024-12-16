@@ -1,4 +1,11 @@
+using LibraryManagement.Core.Repositories;
+using LibraryManagement.Core.Services;
+using LibraryManagement.Core.UnitOfWorks;
 using LibraryManagement.Repository;
+using LibraryManagement.Repository.Repositories;
+using LibraryManagement.Repository.UnitOfWorks;
+using LibraryManagement.Service.Mapping;
+using LibraryManagement.Service.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,9 +13,21 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// FluentValidation eklenecek
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IBookService, BookService>();
+
+
+builder.Services.AddAutoMapper(typeof(MapProfile));
+
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
 
