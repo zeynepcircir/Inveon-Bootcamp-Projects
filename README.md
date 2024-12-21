@@ -22,3 +22,13 @@ Bu proje, temel kitap yönetimi işlemlerini gerçekleştirebileceğiniz bir Kü
 - **UnitOfWork**: Veritabanı işlemlerini tek bir context üzerinden yönetme.
 - **Controllers**: HTTP isteklerini yöneten kontrolörler.
 - **Views**: Kullanıcı arayüzü için Razor tabanlı sayfalar.
+
+---
+
+## Uygulama Ekran Görüntüleri
+
+### Kitap Detay Sayfası
+![Kitap Detay Sayfası](https://github.com/zeynepcircir/Inveon-Bootcamp-Projects/blob/week-2/react2.png)
+
+### Kitap Listeleme Sayfası
+![Kitap Listeleme Sayfası](https://github.com/zeynepcircir/Inveon-Bootcamp-Projects/blob/week-2/react.png)
